@@ -286,6 +286,7 @@ def delete():
 
 if file is None:
     st.write('目前文件为空，请上传您需要处理的南昌航空大学成绩列表.csv文件')
+    st.write('© 2021南昌航空大学18208144-羊绍平')
 if file is not None:
     DataProcess(file)
     DataProcess1()
