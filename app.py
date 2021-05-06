@@ -8,8 +8,7 @@ import os
 st.title('欢迎使用基于数据挖掘技术的学生成绩分析系统')
 st.header('负责人：南昌航空大学18208144-羊绍平')
 st.write('联系qq：1046901023')
-st.write('请将您需要处理的南昌航空大学成绩列表.csv文件放在用户文件夹下')
-file = st.file_uploader("点击下方上传南昌航空大学成绩列表.csv文件")
+file = st.file_uploader("点击下方上传南昌航空大学(xxxx级成绩列表.csv)文件")
 jishu = ''
 if file is not None:
     jishu = file.name[0:5]
@@ -283,10 +282,10 @@ def delete():
             os.remove(jishu+str(w)+'方向数据分析.csv')
         if os.path.exists('test'+str(w)+'.csv'):
             os.remove('test'+str(w)+'.csv')
-    st.write('已完成中间过渡文件删除，进度100%,您所需要的文件已在用户文件夹中，请前往查看。')
+    st.write('已完成中间过渡文件删除，进度100%')
 
 if file is None:
-    st.write('目前文件为空，请上传您需要处理的南昌航空大学成绩列表.csv文件')
+    st.write('目前文件为空，请上传您需要处理的南昌航空大学(xxxx级成绩列表.csv)文件')
     st.write('© 2021南昌航空大学18208144-羊绍平')
 if file is not None:
     DataProcess(file)
