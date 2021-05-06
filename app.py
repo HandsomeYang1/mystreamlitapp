@@ -16,6 +16,7 @@ if file is not None:
 
 def DataProcess(file):
     data = pd.read_csv(file,encoding='gbk')
+    data.to_csv(jishu+'成绩列表.csv', index=False, encoding='gbk')
     # print(data.isnull().sum().sort_values(ascending=True))  # 统计空值
     # print(data[data['总成绩'].isnull()]['课程编号'])# 经查看只有两个科目因为系统原因重修没有录分数
     data.fillna(0,inplace=True)#用0填充空值
