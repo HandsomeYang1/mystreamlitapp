@@ -303,6 +303,10 @@ def download():
     os.system("python -m http.server 8081")
 
 def printfile():
+    o = pd.read_table(jishu + '学位与留级预警.txt',encoding='gbk')
+    st.write(jishu + '学位与留级预警',o)
+    t = pd.read_table(jishu + '挂科率.txt',encoding='gbk')
+    st.write(jishu + '挂科率',t)
     for w in range(1, 10):
         if os.path.exists(jishu + str(w) + '方向各科相关程度.csv'):
             l = pd.read_csv(jishu + str(w) + '方向各科相关程度.csv', encoding='gbk')
