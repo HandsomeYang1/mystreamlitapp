@@ -158,6 +158,7 @@ def FailRate():
         rate = (len(df) - len(df1)) / len(df)
         print('科目编号：' + i + ' 课程名称: ' + df2 + ' 该科的挂科率为' + str(rate))
     sys.stdout = oldPrint
+    f.close()
     st.success('已完成挂科率计算，进度：50%')
 
 def FailWarning():
@@ -185,6 +186,7 @@ def FailWarning():
                 print('请继续努力！！')
                 print('\n')
             sys.stdout = oldPrint
+            f.close()
 
     st.success('已完成每方向挂科预警，进度：62.5%')
 
@@ -240,6 +242,7 @@ def DegreeAndRepeaterWarning():
         print('\n')
 
     sys.stdout = oldPrint
+    f.close()
     st.success('已完成学位与留级预警，进度：75%')
 
 def Kmeans():
@@ -269,6 +272,7 @@ def Kmeans():
                 for j in ls:
                     print(data.loc[j])
             sys.stdout = oldPrint
+            f.close()
 
     st.success('已完成每方向聚类，进度：87.5%')
 
