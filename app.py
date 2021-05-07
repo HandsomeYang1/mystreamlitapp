@@ -296,6 +296,5 @@ if file is not None:
     DegreeAndRepeaterWarning()
     Kmeans()
     delete()
-    for w in range(1, 10):
     st.write('© 2021南昌航空大学18208144-羊绍平')
     st.balloons()
