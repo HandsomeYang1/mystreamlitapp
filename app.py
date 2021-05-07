@@ -312,8 +312,8 @@ def printfile():
             l = pd.read_csv(jishu + str(w) + '方向各科相关程度.csv', encoding='gbk')
             st.write(jishu + str(w) + '方向各科相关程度',l)
         if os.path.exists(jishu + str(w) + '方向聚类.txt'):
-            
-            st.text( jishu + str(w) + '方向聚类',k)
+            k = pd.read_table(jishu + str(w) + '方向聚类.txt', encoding='gbk')
+            st.write( jishu + str(w) + '方向聚类',k)
         if os.path.exists(jishu + str(w) + '方向挂科预警.txt'):
             h = pd.read_table(jishu + str(w) + '方向挂科预警.txt', encoding='gbk')
             st.write(jishu + str(w) + '方向挂科预警',h)
