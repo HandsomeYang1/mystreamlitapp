@@ -298,7 +298,7 @@ def download():
         st.write('http://host:8081/' + jishu + '学位与留级预警.txt')
     os.system("python -m http.server 8081")
 
-def:printfile():
+def printfile():
     l = pd.read_table(jishu + '学位与留级预警.txt',encoding='gbk')
     st.write(jishu + '学位与留级预警',l)
     k = pd.read_table(jishu + '挂科率.txt',encoding='gbk')
