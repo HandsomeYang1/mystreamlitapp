@@ -284,19 +284,7 @@ def delete():
             os.remove('test'+str(w)+'.csv')
     st.success('已完成中间过渡文件删除，进度100%')
 
-if file is None:
-    st.write('目前文件为空，请上传您需要处理的南昌航空大学(xxxx级成绩列表.csv)文件')
-    st.write('© 2021南昌航空大学18208144-羊绍平')
-if file is not None:
-    DataProcess(file)
-    DataProcess1()
-    DataProcess2()
-    FailRate()
-    FailWarning()
-    DegreeAndRepeaterWarning()
-    Kmeans()
-    delete()
-    st.info('© 2021南昌航空大学18208144-羊绍平')
+def download():
     for w in range(1, 10):
         if os.path.exists(jishu + str(w) + '方向各科相关程度.csv'):
             st.write('http://localhost:8081/' + jishu + str(w) + '方向各科相关程度.csv')
@@ -309,3 +297,18 @@ if file is not None:
     if os.path.exists(jishu + '学位与留级预警.txt'):
         st.write('http://localhost:8081/' + jishu + '学位与留级预警.txt')
     os.system("python -m http.server 8081")
+    
+if file is None:
+    st.write('目前文件为空，请上传您需要处理的南昌航空大学(xxxx级成绩列表.csv)文件')
+    st.write('© 2021南昌航空大学18208144-羊绍平')
+if file is not None:
+    DataProcess(file)
+    DataProcess1()
+    DataProcess2()
+    FailRate()
+    FailWarning()
+    DegreeAndRepeaterWarning()
+    Kmeans()
+    delete()
+    st.write('© 2021南昌航空大学18208144-羊绍平')
+    download()
