@@ -296,6 +296,7 @@ if file is not None:
     DegreeAndRepeaterWarning()
     Kmeans()
     delete()
+    st.info('© 2021南昌航空大学18208144-羊绍平')
     for w in range(1, 10):
         if os.path.exists(jishu + str(w) + '方向各科相关程度.csv'):
             st.write('http://localhost:8081/' + jishu + str(w) + '方向各科相关程度.csv')
@@ -307,5 +308,4 @@ if file is not None:
         st.write('http://localhost:8081/' + jishu +'挂科率.txt')
     if os.path.exists(jishu + '学位与留级预警.txt'):
         st.write('http://localhost:8081/' + jishu + '学位与留级预警.txt')
-    st.write('© 2021南昌航空大学18208144-羊绍平')
     os.system("python -m http.server 8081")
