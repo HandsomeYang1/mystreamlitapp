@@ -297,6 +297,12 @@ def download():
     if os.path.exists(jishu + '学位与留级预警.txt'):
         st.write('http://host:8081/' + jishu + '学位与留级预警.txt')
     os.system("python -m http.server 8081")
+
+def:printfile():
+    l = pd.read_table(jishu + '学位与留级预警.txt',encoding='gbk')
+    st.write(jishu + '学位与留级预警',l)
+    k = pd.read_table(jishu + '挂科率.txt',encoding='gbk')
+    st.write(jishu + '挂科率',k)
     
 if file is None:
     st.write('目前文件为空，请上传您需要处理的南昌航空大学(xxxx级成绩列表.csv)文件')
@@ -311,4 +317,6 @@ if file is not None:
     Kmeans()
     delete()
     st.write('© 2021南昌航空大学18208144-羊绍平')
-    download()
+    printfile()
+#     download()
+
