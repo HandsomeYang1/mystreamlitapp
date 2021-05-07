@@ -289,7 +289,7 @@ def delete():
     st.success('已完成中间过渡文件删除，进度100%')
 
 def printfile():
-    o = pd.read_table(jishu + '学位与留级预警.txt',encoding='gbk')
+    o = pd.read_table(jishu + '学位与留级预警.txt',encoding='gbk',index=Flase)
     st.write(jishu + '学位与留级预警',o)
     t = pd.read_table(jishu + '挂科率.txt',encoding='gbk')
     st.write(jishu + '挂科率',t)
@@ -298,7 +298,7 @@ def printfile():
             l = pd.read_csv(jishu + str(w) + '方向各科相关程度.csv', encoding='gbk')
             st.write(jishu + str(w) + '方向各科相关程度',l)
         if os.path.exists(jishu + str(w) + '方向聚类.txt'):
-            k = pd.read_table(jishu + str(w) + '方向聚类.txt', encoding='gbk')
+            k = pd.read_table(jishu + str(w) + '方向聚类.txt', encoding='gbk',index=Flase)
             st.write( jishu + str(w) + '方向聚类',k)
         if os.path.exists(jishu + str(w) + '方向挂科预警.txt'):
             h = pd.read_table(jishu + str(w) + '方向挂科预警.txt', encoding='gbk')
