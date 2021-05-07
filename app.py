@@ -85,7 +85,7 @@ def DataProcess(file):
     data7.to_csv(jishu+'7方向表.csv', index=False, encoding='gbk')
     data8.to_csv(jishu+'8方向表.csv', index=False, encoding='gbk')
     data9.to_csv(jishu+'9方向表.csv', index=False, encoding='gbk')
-    st.write('已完成数据加工1，进度：12.5%')
+    st.success('已完成数据加工1，进度：12.5%')
 
 def DataProcess1():
     for w in range(1,10):
@@ -118,7 +118,7 @@ def DataProcess1():
                         a.loc[id, cid] = df1['总成绩'].values[0]
                 a.to_csv('test' + str(w) + '.csv', index=False, encoding='gbk')
 
-    st.write('已完成数据加工2，进度：25%')
+    st.success('已完成数据加工2，进度：25%')
 
 def DataProcess2():
     for w in range(1,10):
@@ -141,7 +141,7 @@ def DataProcess2():
             data1 = pd.DataFrame(data.corr())
             data1.to_csv(jishu + str(w) + '方向各科相关程度.csv', encoding='gbk')
 
-    st.write('已完成数据加工3，给出每方向学科相关程度，进度：37.5%')
+    st.success('已完成数据加工3，给出每方向学科相关程度，进度：37.5%')
 
 def FailRate():
     data = pd.read_csv(jishu+'大表.csv', encoding='gbk')
@@ -158,7 +158,7 @@ def FailRate():
         rate = (len(df) - len(df1)) / len(df)
         print('科目编号：' + i + ' 课程名称: ' + df2 + ' 该科的挂科率为' + str(rate))
     sys.stdout = oldPrint
-    st.write('已完成挂科率计算，进度：50%')
+    st.success('已完成挂科率计算，进度：50%')
 
 def FailWarning():
     pd.set_option('display.max_columns', None)
@@ -186,7 +186,7 @@ def FailWarning():
                 print('\n')
             sys.stdout = oldPrint
 
-    st.write('已完成每方向挂科预警，进度：62.5%')
+    st.success('已完成每方向挂科预警，进度：62.5%')
 
 def DegreeAndRepeaterWarning():
     data = pd.read_csv(jishu+'成绩列表.csv', encoding='gbk')
@@ -240,7 +240,7 @@ def DegreeAndRepeaterWarning():
         print('\n')
 
     sys.stdout = oldPrint
-    st.write('已完成学位与留级预警，进度：75%')
+    st.success('已完成学位与留级预警，进度：75%')
 
 def Kmeans():
     pd.reset_option('display.max_columns')
@@ -270,7 +270,7 @@ def Kmeans():
                     print(data.loc[j])
             sys.stdout = oldPrint
 
-    st.write('已完成每方向聚类，进度：87.5%')
+    st.success('已完成每方向聚类，进度：87.5%')
 
 def delete():
     for w in range(1,10):
@@ -282,7 +282,7 @@ def delete():
             os.remove(jishu+str(w)+'方向数据分析.csv')
         if os.path.exists('test'+str(w)+'.csv'):
             os.remove('test'+str(w)+'.csv')
-    st.write('已完成中间过渡文件删除，进度100%')
+    st.success('已完成中间过渡文件删除，进度100%')
 
 if file is None:
     st.write('目前文件为空，请上传您需要处理的南昌航空大学(xxxx级成绩列表.csv)文件')
