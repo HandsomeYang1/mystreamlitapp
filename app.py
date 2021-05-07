@@ -212,7 +212,7 @@ def DegreeAndRepeaterWarning():
     df = data1['学号'].unique()
     # print(df)
     oldPrint = sys.stdout
-    f = open(jishu+'学位与留级预警.csv', "w",, encoding='gbk')
+    f = open(jishu+'学位与留级预警.csv',"w", encoding='gbk')
     sys.stdout = f
     pd.set_option('display.max_columns', None)
     pd.set_option('display.max_rows', None)
