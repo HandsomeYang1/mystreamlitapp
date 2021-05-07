@@ -296,8 +296,9 @@ if file is not None:
     DegreeAndRepeaterWarning()
     Kmeans()
     delete()
-    for w in range(1,10):
+    for w in range(1, 10):
         if os.path.exists(jishu + str(w) + '方向各科相关程度.csv'):
-            st.write('http://localhost:8081/'+jishu + str(w) + '方向各科相关程度.csv')
+            st.write('http://localhost:8081/' + jishu + str(w) + '方向各科相关程度.csv')
+    os.system("python -m http.server 8081")
     st.write('© 2021南昌航空大学18208144-羊绍平')
     st.balloons()
