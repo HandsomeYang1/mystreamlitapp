@@ -296,6 +296,5 @@ if file is not None:
     DegreeAndRepeaterWarning()
     Kmeans()
     delete()
-    os.write(os.getcwd())
     st.write('© 2021南昌航空大学18208144-羊绍平')
     st.balloons()
