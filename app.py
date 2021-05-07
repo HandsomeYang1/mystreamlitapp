@@ -170,7 +170,7 @@ def FailWarning():
         df = pd.read_csv(jishu + '成绩列表.csv', encoding='gbk')
         if os.path.exists(jishu + str(w) +'方向各科相关程度.csv'):
             oldPrint = sys.stdout
-            f = open(jishu + str(w) + '方向挂科预警.csv', "w")
+            f = open(jishu + str(w) + '方向挂科预警.csv', "w", encoding='gbk')
             sys.stdout = f
             data1 = pd.read_csv(jishu + str(w) + '方向各科相关程度.csv', encoding='gbk')
             data1.index = data1.iloc[:, 0]
@@ -212,7 +212,7 @@ def DegreeAndRepeaterWarning():
     df = data1['学号'].unique()
     # print(df)
     oldPrint = sys.stdout
-    f = open(jishu+'学位与留级预警.csv', "w")
+    f = open(jishu+'学位与留级预警.csv', "w",, encoding='gbk')
     sys.stdout = f
     pd.set_option('display.max_columns', None)
     pd.set_option('display.max_rows', None)
@@ -263,7 +263,7 @@ def Kmeans():
             # print(dataKmeans.values)
             data.index = range(len(data))
             oldPrint = sys.stdout
-            f = open(jishu + str(w) + '方向聚类.csv', "w")
+            f = open(jishu + str(w) + '方向聚类.csv', "w", encoding='gbk')
             sys.stdout = f
             for i in range(center):
                 ls = []
