@@ -297,3 +297,4 @@ if file is not None:
     Kmeans()
     delete()
     st.write('© 2021南昌航空大学18208144-羊绍平')
+    st.balloons()
