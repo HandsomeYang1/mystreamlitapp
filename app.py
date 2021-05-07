@@ -304,9 +304,8 @@ if file is not None:
         if os.path.exists(jishu + str(w) + '方向挂科预警.txt'):
             st.write('http://localhost:8081/' + jishu + str(w) + '方向挂科预警.txt')
     if os.path.exists(jishu + '挂科率.txt'):
-            st.write('http://localhost:8081/' + jishu +'挂科率.txt')
+        st.write('http://localhost:8081/' + jishu +'挂科率.txt')
     if os.path.exists(jishu + '学位与留级预警.txt'):
-            st.write('http://localhost:8081/' + jishu + '学位与留级预警.txt')
+        st.write('http://localhost:8081/' + jishu + '学位与留级预警.txt')
     st.write('© 2021南昌航空大学18208144-羊绍平')
-    st.balloons()
     os.system("python -m http.server 8081")
