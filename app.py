@@ -288,20 +288,6 @@ def delete():
             os.remove('test'+str(w)+'.csv')
     st.success('已完成中间过渡文件删除，进度100%')
 
-def download():
-    for w in range(1, 10):
-        if os.path.exists(jishu + str(w) + '方向各科相关程度.csv'):
-            st.write('http://host:8081/' + jishu + str(w) + '方向各科相关程度.csv')
-        if os.path.exists(jishu + str(w) + '方向聚类.txt'):
-            st.write('http://host:8081/' + jishu + str(w) + '方向聚类.txt')
-        if os.path.exists(jishu + str(w) + '方向挂科预警.txt'):
-            st.write('http://host:8081/' + jishu + str(w) + '方向挂科预警.txt')
-    if os.path.exists(jishu + '挂科率.txt'):
-        st.write('http://host:8081/' + jishu +'挂科率.txt')
-    if os.path.exists(jishu + '学位与留级预警.txt'):
-        st.write('http://host:8081/' + jishu + '学位与留级预警.txt')
-    os.system("python -m http.server 8081")
-
 def printfile():
     o = pd.read_table(jishu + '学位与留级预警.txt',encoding='gbk')
     st.write(jishu + '学位与留级预警',o)
@@ -337,5 +323,4 @@ if file is not None:
     delete()
     st.write('© 2021南昌航空大学18208144-羊绍平')
     printfile()
-#     download()
 
