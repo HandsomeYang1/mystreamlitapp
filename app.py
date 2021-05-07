@@ -299,10 +299,21 @@ def download():
     os.system("python -m http.server 8081")
 
 def printfile():
-    l = pd.read_table(jishu + '学位与留级预警.txt',encoding='gbk')
-    st.write(jishu + '学位与留级预警',l)
-    k = pd.read_table(jishu + '挂科率.txt',encoding='gbk')
-    st.write(jishu + '挂科率',k)
+    for w in range(1, 10):
+        if os.path.exists(jishu + str(w) + '方向各科相关程度.csv'):
+            l = pd.read_csv(jishu + str(w) + '方向各科相关程度.csv', encoding='gbk')
+            st.write(jishu + str(w) + '方向各科相关程度.csv',l)
+        if os.path.exists(jishu + str(w) + '方向聚类.txt'):
+            k = pd.read_table(jishu + str(w) + '方向聚类.txt', encoding='gbk')
+            st.write( jishu + str(w) + '方向聚类.txt',k)
+        if os.path.exists(jishu + str(w) + '方向挂科预警.txt'):
+            h = pd.read_table(jishu + str(w) + '方向挂科预警.txt', encoding='gbk')
+            st.write(jishu + str(w) + '方向挂科预警.txt',h)
+#     l = pd.read_table(jishu + '学位与留级预警.txt',encoding='gbk')
+#     st.write(jishu + '学位与留级预警',l)
+#     k = pd.read_table(jishu + '挂科率.txt',encoding='gbk')
+#     st.write(jishu + '挂科率',k)
+
     
 if file is None:
     st.write('目前文件为空，请上传您需要处理的南昌航空大学(xxxx级成绩列表.csv)文件')
