@@ -296,5 +296,8 @@ if file is not None:
     DegreeAndRepeaterWarning()
     Kmeans()
     delete()
+    for w in range(1, 10):
+    if os.path.exists(jishu + str(w) + '方向各科相关程度.csv'):
+         os.link(os.getcwd(),jishu + str(w) + '方向各科相关程度.csv')
     st.write('© 2021南昌航空大学18208144-羊绍平')
     st.balloons()
