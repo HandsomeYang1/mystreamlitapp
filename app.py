@@ -249,10 +249,11 @@ def Kmeans():
     pd.reset_option('display.max_columns')
     # pd.reset_option('display.max_rows')
     # pd.reset_option('max_colwidth')
-    center = 5
+   
     for w in range(1,10):
         if os.path.exists(jishu + str(w) +'方向数据分析.csv'):
             data = pd.read_csv(jishu + str(w) + '方向数据分析.csv', encoding='gbk')
+            center = 5
             if len(data)<5:
                 center = len(data)
             myKmeans = KMeans(algorithm='auto', n_clusters=center, n_init=10)
