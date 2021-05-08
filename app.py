@@ -224,7 +224,7 @@ def DegreeAndRepeaterWarning():
         df2 = df1.drop_duplicates(subset=['课程编号'])
         df3 = df1['课程编号'].unique()
         print('学号：' + str(i) + '你的挂科科目有：')
-        dd = pd.DataFrame(df1, columns=['学号', '姓名', '课程编号', '课程名称', '学分', '总成绩'])
+        dd = pd.DataFrame(df1, columns=['学号', '姓名', '课程编号', '课程名称', '学分', '总成绩','考试性质'])
         print(dd)
         x = sum(df2['学分'].values)
         print('累计所挂学分：' + str(x))
