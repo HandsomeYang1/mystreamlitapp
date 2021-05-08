@@ -175,12 +175,16 @@ def FailWarning():
             data1 = pd.read_csv(jishu + str(w) + '方向各科相关程度.csv', encoding='gbk')
             data1.index = data1.iloc[:, 0]
             data = pd.read_csv(jishu + str(w) + '方向数据分析.csv', encoding='gbk')
-            print('以下学号同学你的平均分小于等于65分,具有很大的挂科风险，请继续努力！！')
-            print(data[data['平均分'] <= 65]['学号'].values)
+            print('以下同学你的平均分小于等于65分,具有很大的挂科风险，请继续努力！！')
+            for e in data[data['平均分'] <= 65]['学号'].values:
+                b = df[df['学号']==e]['姓名'].values[0]
+                print(e,b)
             print('\n')
             for i in data.columns[1:-1]:
-                print('以下学号学生，你们的该科目分数小于等于65,课程编号:' + i + ' 课程名称:' + df[df['课程编号'] == i]['课程名称'].values[0])
-                print(data[data[i] <= 65]['学号'].values)
+                print('以下学生，你们的该科目分数小于等于65,课程编号:' + i + ' 课程名称:' + df[df['课程编号'] == i]['课程名称'].values[0])
+                for g in data[data[i] <= 65]['学号'].values:
+                    h = df[df['学号']==g]['姓名'].values[0]
+                    print(g,h)
                 print('该科目与其他科目的相关程度为：')
                 print(data1[i][1:-1])
                 print('请继续努力！！')
