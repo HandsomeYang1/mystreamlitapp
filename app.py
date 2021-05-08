@@ -253,6 +253,8 @@ def Kmeans():
     for w in range(1,10):
         if os.path.exists(jishu + str(w) +'方向数据分析.csv'):
             data = pd.read_csv(jishu + str(w) + '方向数据分析.csv', encoding='gbk')
+            if len(data)<5:
+                center = len(data)
             myKmeans = KMeans(algorithm='auto', n_clusters=center, n_init=10)
             data1 = data.drop(['学号'], axis=1)
             # print(data1.head(6))
