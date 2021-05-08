@@ -185,6 +185,7 @@ def FailWarning():
                 for g in data[data[i] <= 65]['学号'].values:
                     h = df[df['学号']==g]['姓名'].values[0]
                     print(g,h)
+                print('挂科人数：',data[data[i] <= 65]['学号'].count())
                 print('该科目与其他科目的相关程度为：')
                 print(data1[i][1:-1])
                 print('请继续努力！！')
