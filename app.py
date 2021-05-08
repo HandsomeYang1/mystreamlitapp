@@ -235,7 +235,7 @@ def DegreeAndRepeaterWarning():
             a = a.append(df6)
 
         print('已过科目：')
-        dd1 = pd.DataFrame(a, columns=['学号', '姓名', '课程编号', '课程名称', '学分', '总成绩'])
+        dd1 = pd.DataFrame(a, columns=['学号', '姓名', '课程编号', '课程名称', '学分', '总成绩','考试性质'])
         print(dd1)
         print('累计已过学分：' + str(sum(a['学分'].values)))
         print('未过学分：' + str(x - sum(a['学分'].values)))
