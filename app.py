@@ -278,6 +278,13 @@ def Kmeans():
             dataKmeans = pd.DataFrame(y_Kmeans)
             # print(dataKmeans.values)
             data.index = range(len(data))
+            list2 = []
+            for x in data['学号'].values:
+                list2.append(df[df['学号']==x]['姓名'].values[0])
+            col_name = data.columns.tolist()
+            col_name.insert(1,'姓名')
+            data.reindex(columns = col_name)
+            data['姓名'] = list2
             oldPrint = sys.stdout
             f = open(jishu + str(w) + '方向聚类.txt', "w+", encoding='gbk')
             sys.stdout = f
