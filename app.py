@@ -337,7 +337,7 @@ def download():
     hostname = socket.gethostname()
     ipadrr = socket.gethostbyname(hostname)
     if os.path.exists(jishu + '挂科率.txt'):
-        st.write('http://'+ipadrr+':8081/' + jishu +'挂科率.txt')
+        st.write('http://'+ipadrr+'/' + jishu +'挂科率.txt')
     if os.path.exists(jishu + '学位与留级预警.txt'):
         st.write('http://'+ipadrr+':8081/' + jishu + '学位与留级预警.txt')
     for w in range(1, 10):
@@ -348,7 +348,7 @@ def download():
         if os.path.exists(jishu + str(w) + '方向挂科预警.txt'):
             st.write('http://'+ipadrr+':8081/' + jishu + str(w) + '方向挂科预警.txt')
     st.balloons()
-    os.system("python -m http.server 8081")
+#     os.system("python -m http.server 8081")
     
 if file is None:
     st.write('目前文件为空，请上传您需要处理的南昌航空大学(xxxx级成绩列表.csv)文件')
