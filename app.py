@@ -332,6 +332,20 @@ def printfile():
 #     k = pd.read_table(jishu + '挂科率.txt',encoding='gbk')
 #     st.write(jishu + '挂科率',k)
 
+def download():
+    if os.path.exists(jishu + '挂科率.txt'):
+        st.write('http://35.201.127.49:8081/' + jishu +'挂科率.txt')
+    if os.path.exists(jishu + '学位与留级预警.txt'):
+        st.write('http://35.201.127.49:8081/' + jishu + '学位与留级预警.txt')
+    for w in range(1, 10):
+        if os.path.exists(jishu + str(w) + '方向各科相关程度.csv'):
+            st.write('http://35.201.127.49:8081/' + jishu + str(w) + '方向各科相关程度.csv')
+        if os.path.exists(jishu + str(w) + '方向聚类.txt'):
+            st.write('http://35.201.127.49:8081/' + jishu + str(w) + '方向聚类.txt')
+        if os.path.exists(jishu + str(w) + '方向挂科预警.txt'):
+            st.write('http://35.201.127.49:8081/' + jishu + str(w) + '方向挂科预警.txt')
+    st.balloons()
+    os.system("python -m http.server 8081")
     
 if file is None:
     st.write('目前文件为空，请上传您需要处理的南昌航空大学(xxxx级成绩列表.csv)文件')
@@ -347,5 +361,5 @@ if file is not None:
     delete()
     st.write('© 2021南昌航空大学18208144-羊绍平')
     printfile()
-    st.balloons()
+    download()
 
