@@ -4,6 +4,7 @@ import sys
 import numpy as np
 from sklearn.cluster import KMeans
 import os
+import socket
 
 st.title('欢迎使用基于数据挖掘技术的学生成绩分析系统')
 st.header('负责人：南昌航空大学18208144-羊绍平')
@@ -333,17 +334,19 @@ def printfile():
 #     st.write(jishu + '挂科率',k)
 
 def download():
+    hostname = socket.gethostname()
+    ipadrr = socket.gethostbyname(hostname)
     if os.path.exists(jishu + '挂科率.txt'):
-        st.write('http://35.201.127.49:8081/' + jishu +'挂科率.txt')
+        st.write('http://'+ipadrr+':8081/' + jishu +'挂科率.txt')
     if os.path.exists(jishu + '学位与留级预警.txt'):
-        st.write('http://35.201.127.49:8081/' + jishu + '学位与留级预警.txt')
+        st.write('http://'+ipadrr+':8081/' + jishu + '学位与留级预警.txt')
     for w in range(1, 10):
         if os.path.exists(jishu + str(w) + '方向各科相关程度.csv'):
-            st.write('http://35.201.127.49:8081/' + jishu + str(w) + '方向各科相关程度.csv')
+            st.write('http://'+ipadrr+':8081/' + jishu + str(w) + '方向各科相关程度.csv')
         if os.path.exists(jishu + str(w) + '方向聚类.txt'):
-            st.write('http://35.201.127.49:8081/' + jishu + str(w) + '方向聚类.txt')
+            st.write('http://'+ipadrr+':8081/' + jishu + str(w) + '方向聚类.txt')
         if os.path.exists(jishu + str(w) + '方向挂科预警.txt'):
-            st.write('http://35.201.127.49:8081/' + jishu + str(w) + '方向挂科预警.txt')
+            st.write('http://'+ipadrr+':8081/' + jishu + str(w) + '方向挂科预警.txt')
     st.balloons()
     os.system("python -m http.server 8081")
     
