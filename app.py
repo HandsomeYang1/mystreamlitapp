@@ -238,7 +238,7 @@ def DegreeAndRepeaterWarning():
         df3 = df1['课程编号'].unique()
         print('学号：' + str(i) + '你的挂科科目有：')
         dd = pd.DataFrame(df1, columns=['学号', '姓名', '课程编号', '课程名称', '学分', '总成绩','考试性质'])
-        print(dd)
+        print(dd.sort_values(by='课程编号'))
         x = sum(df2['学分'].values)
         print('累计所挂学分：' + str(x))
         for j in df3:
@@ -249,7 +249,7 @@ def DegreeAndRepeaterWarning():
 
         print('已过科目：')
         dd1 = pd.DataFrame(a, columns=['学号', '姓名', '课程编号', '课程名称', '学分', '总成绩','考试性质'])
-        print(dd1)
+        print(dd1.sort_values(by='课程编号'))
         print('累计已过学分：' + str(sum(a['学分'].values)))
         print('未过学分：' + str(x - sum(a['学分'].values)))
         print('\n')
