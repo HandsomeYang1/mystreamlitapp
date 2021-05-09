@@ -259,6 +259,7 @@ def DegreeAndRepeaterWarning():
     st.success('已完成学位与留级预警，进度：75%')
 
 def Kmeans():
+    df = pd.read_csv(jishu + '成绩列表.csv', encoding='gbk')
     pd.reset_option('display.max_columns')
     # pd.reset_option('display.max_rows')
     # pd.reset_option('max_colwidth')
