@@ -174,6 +174,14 @@ def FailWarning():
             sys.stdout = f
             data1 = pd.read_csv(jishu + str(w) + '方向各科相关程度.csv', encoding='gbk')
             data1.index = data1.iloc[:, 0]
+            list1 = ['']
+            for v in data1.iloc[:, 0][1:-1]:
+                list1.append(df[df['课程编号']==v]['课程名称'].values[0])
+            list1.append('')
+            col_name = data1.columns.tolist()
+            col_name.insert(1,'课程名称')
+            data1 = data1.reindex(columns=col_name)
+            data1['课程名称'] = list1
             data = pd.read_csv(jishu + str(w) + '方向数据分析.csv', encoding='gbk')
             print('以下同学你的平均分小于等于65分,具有很大的挂科风险，请继续努力！！')
             for e in data[data['平均分'] <= 65]['学号'].values:
@@ -187,7 +195,7 @@ def FailWarning():
                     print(g,h)
                 print('挂科人数：',data[data[i] <= 65]['学号'].count())
                 print('该科目与其他科目的相关程度为：')
-                print(data1[i][1:-1])
+                print(pd.DataFrame(data1,columns=['课程名称',i])[1:-1])
                 print('请继续努力！！')
                 print('\n')
             sys.stdout = oldPrint
