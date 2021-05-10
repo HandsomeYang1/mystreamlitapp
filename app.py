@@ -349,7 +349,11 @@ def download():
             st.write('http://'+ipadrr+':8081/' + jishu + str(w) + '方向挂科预警.txt')
     st.balloons()
     os.system("python -m http.server 8081")
-    
+
+def download1():
+    hh = '<a href='+jishu + '学位与留级预警.txt'+'>点击下载</a>'
+    st.write(hh,unsafe_allow_html=True)
+
 if file is None:
     st.write('目前文件为空，请上传您需要处理的南昌航空大学(xxxx级成绩列表.csv)文件')
     st.write('© 2021南昌航空大学18208144-羊绍平')
