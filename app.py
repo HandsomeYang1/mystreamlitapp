@@ -372,4 +372,9 @@ if file is not None:
     delete()
     st.write('© 2021南昌航空大学18208144-羊绍平')
     printfile()
+    for w in range(1,10):
+        if os.path.exists(jishu + str(w) + '方向各科相关程度.csv'):
+            data = pd.read_csv(jishu + str(w) + '方向各科相关程度.csv',encoding='gbk')
+            st.markdown(get_table_download_link(data,jishu + str(w) + '方向各科相关程度'),unsafe_allow_html=True)
 
+    
