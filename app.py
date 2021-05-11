@@ -334,6 +334,11 @@ def delete():
             os.remove('test'+str(w)+'.csv')
     st.success('已完成中间过渡文件删除，进度100%')
 
+def get_table_download_link(df,file_name):
+    csv = df.to_csv(index=False,encoding='gbk')
+    b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
+    return f'<a href="data:file/csv;base64,{b64}" download="{file_name}.csv">Download {file_name} file</a>'
+ 
 def printfile():
     o = pd.read_table(jishu + '学位与留级预警.txt',encoding='gbk',index_col=False)
     st.write(jishu + '学位与留级预警',o)
@@ -342,6 +347,7 @@ def printfile():
     for w in range(1, 10):
         if os.path.exists(jishu + str(w) + '方向各科相关程度.csv'):
             l = pd.read_csv(jishu + str(w) + '方向各科相关程度.csv', encoding='gbk')
+            st.markdown(get_table_download_link(l,jishu + str(w) + '方向各科相关程度'),unsafe_allow_html=True)
             st.write(jishu + str(w) + '方向各科相关程度',l)
         if os.path.exists(jishu + str(w) + '方向聚类.txt'):
             k = pd.read_table(jishu + str(w) + '方向聚类.txt', encoding='gbk',index_col=False)
@@ -353,11 +359,6 @@ def printfile():
 #     st.write(jishu + '学位与留级预警',l)
 #     k = pd.read_table(jishu + '挂科率.txt',encoding='gbk')
 #     st.write(jishu + '挂科率',k)
-
-def get_table_download_link(df,file_name):
-    csv = df.to_csv(index=False,encoding='gbk')
-    b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
-    return f'<a href="data:file/csv;base64,{b64}" download="{file_name}.csv">Download {file_name} file</a>'
 
 if file is None:
     st.write('目前文件为空，请上传您需要处理的南昌航空大学(xxxx级成绩列表.csv)文件')
@@ -373,9 +374,3 @@ if file is not None:
     delete()
     st.write('© 2021南昌航空大学18208144-羊绍平')
     printfile()
-    for w in range(1,10):
-        if os.path.exists(jishu + str(w) + '方向各科相关程度.csv'):
-            data = pd.read_csv(jishu + str(w) + '方向各科相关程度.csv',encoding='gbk')
-            st.markdown(get_table_download_link(data,jishu + str(w) + '方向各科相关程度'),unsafe_allow_html=True)
-
-    
