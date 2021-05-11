@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import sys
+import base64
 import numpy as np
 from sklearn.cluster import KMeans
 import os
