@@ -383,3 +383,4 @@ if file is not None:
     delete()
     st.write('© 2021南昌航空大学18208144-羊绍平')
     printfile()
+    st.balloons()
