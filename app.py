@@ -341,9 +341,13 @@ def get_table_download_link(df,file_name):
  
 def printfile():
     o = pd.read_table(jishu + '学位与留级预警.txt',encoding='gbk',index_col=False)
-    st.write(jishu + '学位与留级预警',o)
+    st.write(jishu + '学位与留级预警')
+    st.markdown(get_table_download_link(o,jishu + '学位与留级预警'),unsafe_allow_html=True)
+    st.write(o)
     t = pd.read_table(jishu + '挂科率.txt',encoding='gbk')
-    st.write(jishu + '挂科率',t)
+    st.write(jishu + '挂科率')
+    st.markdown(get_table_download_link(t,jishu + '挂科率'),unsafe_allow_html=True)
+    st.write(t)
     for w in range(1, 10):
         if os.path.exists(jishu + str(w) + '方向各科相关程度.csv'):
             l = pd.read_csv(jishu + str(w) + '方向各科相关程度.csv', encoding='gbk')
@@ -352,10 +356,14 @@ def printfile():
             st.write(l)
         if os.path.exists(jishu + str(w) + '方向聚类.txt'):
             k = pd.read_table(jishu + str(w) + '方向聚类.txt', encoding='gbk',index_col=False)
-            st.write( jishu + str(w) + '方向聚类',k)
+            st.write( jishu + str(w) + '方向聚类')
+            st.markdown(get_table_download_link(k,jishu + str(w) + '方向聚类'),unsafe_allow_html=True)
+            st.write(k)
         if os.path.exists(jishu + str(w) + '方向挂科预警.txt'):
             h = pd.read_table(jishu + str(w) + '方向挂科预警.txt', encoding='gbk')
-            st.write(jishu + str(w) + '方向挂科预警',h)
+            st.write(jishu + str(w) + '方向挂科预警')
+            st.markdown(get_table_download_link(h,jishu + str(w) + '方向挂科预警'),unsafe_allow_html=True)
+            st.write(h)
 #     l = pd.read_table(jishu + '学位与留级预警.txt',encoding='gbk')
 #     st.write(jishu + '学位与留级预警',l)
 #     k = pd.read_table(jishu + '挂科率.txt',encoding='gbk')
