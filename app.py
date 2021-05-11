@@ -347,8 +347,9 @@ def printfile():
     for w in range(1, 10):
         if os.path.exists(jishu + str(w) + '方向各科相关程度.csv'):
             l = pd.read_csv(jishu + str(w) + '方向各科相关程度.csv', encoding='gbk')
+            st.write(jishu + str(w) + '方向各科相关程度')
             st.markdown(get_table_download_link(l,jishu + str(w) + '方向各科相关程度'),unsafe_allow_html=True)
-            st.write(jishu + str(w) + '方向各科相关程度',l)
+            st.write(l)
         if os.path.exists(jishu + str(w) + '方向聚类.txt'):
             k = pd.read_table(jishu + str(w) + '方向聚类.txt', encoding='gbk',index_col=False)
             st.write( jishu + str(w) + '方向聚类',k)
