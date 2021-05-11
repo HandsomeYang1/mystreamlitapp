@@ -357,7 +357,7 @@ def printfile():
 def get_table_download_link(df,file_name):
     csv = df.to_csv(index=False,encoding='gbk')
     b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
-    return f'<a href="data:file/csv;base64,{b64}" download="{file_name}.csv">Download csv file</a>'
+    return f'<a href="data:file/csv;base64,{b64}" download="{file_name}.csv">Download {file_name} file</a>'
 
 if file is None:
     st.write('目前文件为空，请上传您需要处理的南昌航空大学(xxxx级成绩列表.csv)文件')
