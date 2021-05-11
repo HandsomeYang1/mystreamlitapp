@@ -355,7 +355,7 @@ def printfile():
 #     st.write(jishu + '挂科率',k)
 
 def get_table_download_link(df,file_name):
-    excel = df.to_excel(index=False,encoding='gbk')
+    excel = df.to_excel(index=False,encoding='gbk',excel_writer=file_name+'.xlsx')
     b64 = base64.b64encode(excel.encode()).decode()  # some strings <-> bytes conversions necessary here
     return f'<a href="data:file/excel;base64,{b64}" download="{file_name}.xlsx">Download {file_name} file</a>'
 
