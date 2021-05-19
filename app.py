@@ -154,8 +154,9 @@ def FailRate():
     sys.stdout = f
     for i in a:
         df = data[data['课程编号'] == i]['学号']
-        dd = data[data['课程编号'] == i & data['总成绩'] < 60]['学号']
-        dd1 = dd.unique()
+        dd = data[data['课程编号'] == i]
+        dd1 = dd[dd['总成绩'] < 60]['学号']
+        dd2 = dd1.unique()
         df2 = data1[data1['课程编号'] == i]['课程名称'].values[0]
         # print(df2)
         df1 = df.unique()
