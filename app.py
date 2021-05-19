@@ -236,7 +236,7 @@ def DegreeAndRepeaterWarning():
     for i in df:
         a = pd.DataFrame(columns=data.columns)
         df1 = data1[data1['学号'] == i]
-        df1 = df1[df1['课程属性'] != '选修']
+        df1 = df1[df1['课程性质'] != '通识教育选修课']
         df2 = df1.drop_duplicates(subset=['课程编号'])
         df3 = df1['课程编号'].unique()
         print('学号：' + str(i) + '你的挂科科目有：')
