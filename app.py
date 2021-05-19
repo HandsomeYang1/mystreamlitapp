@@ -158,7 +158,7 @@ def FailRate():
         # print(df2)
         df1 = df.unique()
         rate = (len(df) - len(df1)) / len(df)
-        print('科目编号：' + i + ' 课程名称: ' + df2 + ' 该科的挂科率为' + str(rate))
+        print('科目编号：' + i + ' 课程名称: ' + df2 + ' 该科的挂科率为 ' + str(rate))
     sys.stdout = oldPrint
     f.close()
     st.success('已完成挂科率计算，进度：50%')
