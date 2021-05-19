@@ -160,7 +160,7 @@ def FailRate():
         df2 = data1[data1['课程编号'] == i]['课程名称'].values[0]
         # print(df2)
         df1 = df.unique()
-        rate = len(dd1) / len(df1)
+        rate = len(dd2) / len(df1)
         print('科目编号：' + i + ' 课程名称: ' + df2 + ' 该科的挂科率为 ' + str(rate))
     sys.stdout = oldPrint
     f.close()
